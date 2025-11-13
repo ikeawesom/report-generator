@@ -1,4 +1,4 @@
-import React, { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import {
   Upload,
   FileSpreadsheet,
@@ -49,6 +49,7 @@ export default function DataAnalysisReportGenerator() {
 
     setFileName(uploadedFile.name);
     setFile(uploadedFile);
+    console.log(file);
     setError(null);
     setReport(null);
 
@@ -247,7 +248,7 @@ Format the response as clean markdown suitable for PDF conversion.`;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-xl shadow-xl p-8">
           <div className="flex items-center gap-3 mb-8">
@@ -334,7 +335,7 @@ Format the response as clean markdown suitable for PDF conversion.`;
           {/* Error Display */}
           {error && (
             <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-              <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
               <p className="text-red-800">{error}</p>
             </div>
           )}
